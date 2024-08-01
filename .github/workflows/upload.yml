@@ -13,4 +13,4 @@ jobs:
           aws_bucket: ${{ secrets.S3_BUCKET }}
           endpoint: ${{ secrets.S3_ENDPOINT }}
           source_dir: './'
-          destination_dir: 'repositories/${{ github.event.repository.name }}/'
+          destination_dir: 'repositories/${{ github.repository }}/'
