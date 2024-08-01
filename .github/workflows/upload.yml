@@ -11,7 +11,7 @@ jobs:
       - name: Upload files
         uses: axazara/easy-s3-upload-github-action@main
         env:
-          FILE: /
+          #FILE: ./
           S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
           S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
