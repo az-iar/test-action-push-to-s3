@@ -2,20 +2,15 @@ name: Push to S3
 on: push
 
 jobs:
-  deploy:
+  upload:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@master
-
-      - name: Upload files
-        uses: axazara/easy-s3-upload-github-action@main
-        env:
-          FILE: ./
-          S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
-          S3_BUCKET: ${{ secrets.S3_BUCKET }}
-          S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
-          S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
-          S3_DESTINATION: 'repositories/${{ github.event.repository.name }}'
-          #S3_ACL: 'public-read'
-          S3_PREFIX: 'repositories/'
+      - uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: ${{ secrets.S3_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+          aws_bucket: ${{ secrets.S3_BUCKET }}
+          endpoint: ${{ secrets.S3_ENDPOINT }}
+          source_dir: './'
+          destination_dir: 'repositories/${{ github.event.repository.name }}/'
