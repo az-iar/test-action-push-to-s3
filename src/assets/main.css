@@ -1,0 +1,68 @@
+/*You do not need to change anything in this file*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  @apply bg-gradient-to-b from-purple-900 to-purple-600 min-h-screen flex items-center justify-center;
+}
+
+.wrapper {
+  @apply bg-white rounded-lg p-8 shadow-xl text-center;
+}
+
+.spell-words {
+  @apply flex justify-center gap-1;
+}
+
+.spell-words span {
+  text-shadow:
+    1px 1px #4c1d95,
+    -1px -1px #4c1d95,
+    1px -1px #4c1d95,
+    -1px 1px #4c1d95;
+  @apply rounded text-white text-[48px] text-center h-[48px];
+}
+
+.title {
+  @apply text-4xl font-bold text-purple-900 mb-4;
+}
+
+.subtitle {
+  @apply flex justify-between items-center mb-4;
+}
+
+.spell-words span.right {
+  text-shadow:
+    1px 1px #4c1d95,
+    -1px -1px #4c1d95,
+    1px -1px #4c1d95,
+    -1px 1px #4c1d95;
+  @apply text-purple-900;
+}
+
+.spell-words span.wrong {
+  text-shadow:
+    1px 1px #dc2626,
+    -1px -1px #dc2626,
+    1px -1px #dc2626,
+    -1px 1px #dc2626;
+  @apply text-red-500;
+}
+
+.spell-words span.complete {
+  text-shadow:
+    1px 1px #1d955f,
+    -1px -1px #1d955f,
+    1px -1px #1d955f,
+    -1px 1px #1d955f;
+  @apply text-green-500;
+}
+
+.start-btn {
+  @apply bg-purple-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors duration-300 ease-in-out;
+}
+
+.start-btn:hover {
+  @apply bg-purple-700;
+}
